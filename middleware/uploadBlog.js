@@ -2,15 +2,15 @@ import multer from "multer";
 import fs from "fs";
 import path from "path";
 
-const heroDir = "public/uploads/hero";
+const blogDir = "public/uploads/blogs";
 
-if (!fs.existsSync(heroDir)) {
-  fs.mkdirSync(heroDir, { recursive: true });
+if (!fs.existsSync(blogDir)) {
+  fs.mkdirSync(blogDir, { recursive: true });
 }
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, heroDir);
+    cb(null, blogDir);
   },
 
   filename(req, file, cb) {
@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
     cb(
       null,
-      `hero-${Date.now()}-${Math.round(
+      `blog-${Date.now()}-${Math.round(
         Math.random() * 1e9
       )}${ext}`
     );
@@ -26,9 +26,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype.startsWith("image/")
-  ) {
+  if (file.mimetype.startsWith("image/")) {
     cb(null, true);
   } else {
     cb(
