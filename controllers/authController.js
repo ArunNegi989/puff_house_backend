@@ -38,7 +38,7 @@ import {
     notifyAddressMissing,
     notifyPasswordChanged,
     notifyOrderPlaced
-} from "../utils/notificationService.js";
+} from "../utils/NotificationService.js";
 import { generateForgotPasswordTemplate } from "../services/forgotPassword.js";
 
 export const signup = async (req, res) => {
