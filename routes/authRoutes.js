@@ -7,7 +7,7 @@ import {
 
 import {
     notifyPasswordChanged,
-} from "../utils/notificationService.js";
+} from "../utils/NotificationService.js";
 import {  signup,  verifyEmail,  resendOTP, login, logout,forgotPassword, verifyResetOTP 
     , resetPassword,changePassword,refreshAccessToken,
     checkEmail
