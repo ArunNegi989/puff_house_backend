@@ -37,8 +37,6 @@ temp/
 .cache/
 
 # Uploads
-uploads/
-public/uploads/
 
 # OS files
 .DS_Store
